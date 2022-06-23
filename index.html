@@ -162,7 +162,7 @@
         pos_getCurrentAccount(printResult)
       }
       function setConsumer(firstName, lastName, identifier) {
-          try { pos_setConsumer("consumer": { "firstName": firstName, "lastName": lastName, "identifier": identifier }}) }
+          try { pos_setConsumer({"consumer": { "firstName": firstName, "lastName": lastName, "identifier": identifier }}}) }
           catch (error) {console.log(error)}
       }
       function hideContent(name) {
