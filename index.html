@@ -164,7 +164,7 @@
       }
       function setConsumer(firstName, lastName, identifier) {
           try { pos_setConsumer({ "firstName": firstName, "lastName": lastName, "identifier": identifier }) }
-          catch (error) {console.log(error)}
+          catch (error) { window.prompt(error)}
       }
       function hideContent(name) {
         document.getElementById(name).innerHTML = ""
