@@ -80,9 +80,10 @@
             </form>
             <form name="form5" action="" METHOD="GET">
                 <div class="form-inline">
-                    <input type="text" class="form-control form-control-lg" id="firstName" name="First Name" label="First Name">
-                    <input type="text" class="form-control form-control-lg" id="lastName" name="Last Name" label="Last Name" />
-                    <input type="button" class="btn btn-outline-primary btn-lg" name="button" value="Set Consumer Data" onclick="setConsumer(document.getElementById('firstName').value,document.getElementById('lastName').value)" />
+                    <input type="text" class="form-control form-control-lg" id="firstName" name="First Name" placeholder="First Name">
+                    <input type="text" class="form-control form-control-lg" id="lastName" name="Last Name" placeholder="Last Name" />
+                    <input type="text" class="form-control form-control-lg" id="identifier" name="Identifier" placeholder="Identifier" />
+                    <input type="button" class="btn btn-outline-primary btn-lg" name="button" value="Set Consumer Data" onclick="setConsumer(document.getElementById('firstName').value,document.getElementById('lastName').value,document.getElementById('identifier').value)" />
                 </div>
             </form>
         </div>
@@ -160,8 +161,8 @@
         };
         pos_getCurrentAccount(printResult)
       }
-      function setConsumer(firstName, lastName) {
-          try { pos_setConsumer({ "firstName": firstName, "lastName": lastName }) }
+      function setConsumer(firstName, lastName, identifier) {
+          try { pos_setConsumer({ "firstName": firstName, "lastName": lastName, "identifier": identifier }) }
           catch (error) {console.log(error)}
       }
       function hideContent(name) {
