@@ -78,10 +78,11 @@
                     <input type="button" class="btn btn-outline-primary btn-lg" name="button" value="Load Data" onclick="loadData()" />
                 </div>
             </form>
-            <form name="form3" action="" METHOD="GET">
+            <form name="form5" action="" METHOD="GET">
                 <div class="form-inline">
-                    <input type="text" class="form-control form-control-lg" id="dataview" name="dataview" readonly>
-                    <input type="button" class="btn btn-outline-primary btn-lg" name="button" value="Set Consumer Data" onclick="setConsumer()" />
+                    <input type="text" class="form-control form-control-lg" id="firstName" name="First Name">
+                    <input type="text" class="form-control form-control-lg" id="lastName" name="Last Name">
+                    <input type="button" class="btn btn-outline-primary btn-lg" name="button" value="Store Data" onclick="setConsumer(document.getElementById('firstName').value,document.getElementById('lastName').value)" />
                 </div>
             </form>
         </div>
@@ -159,8 +160,9 @@
         };
         pos_getCurrentAccount(printResult)
       }
-      function setConsumer() {
-          pos_setConsumer({"firstName":"Kyaw","lastName":"Test 1"})
+      function setConsumer(firstName, lastName) {
+          try { pos_setConsumer({ "firstName": firstName, "lastName": lastName }) }
+          catch (error) {console.log(error)}
       }
       function hideContent(name) {
         document.getElementById(name).innerHTML = ""
