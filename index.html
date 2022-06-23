@@ -87,7 +87,8 @@
                 </div>
             </form>
         </div>
-        <script>function syntaxHighlight(json) {
+        <script>
+            function syntaxHighlight(json) {
           if (typeof json != 'string') {
                json = JSON.stringify(json, undefined, 2);
           }
@@ -162,7 +163,7 @@
         pos_getCurrentAccount(printResult)
       }
       function setConsumer(firstName, lastName, identifier) {
-          try { pos_setConsumer({"consumer": { "firstName": firstName, "lastName": lastName, "identifier": identifier }}) }
+          try { pos_setConsumer({ "firstName": firstName, "lastName": lastName, "identifier": identifier }) }
           catch (error) {console.log(error)}
       }
       function hideContent(name) {
